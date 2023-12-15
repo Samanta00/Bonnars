@@ -21,7 +21,7 @@ public class Produto {
     @Column(nullable = false) 
     private String descricao;
     @Column(nullable = false)
-    private LocalDate validade; 
+    private int quantidade;
     @Column(nullable = false)
     private String generoProduto;
     @Column(nullable = false)
@@ -52,11 +52,11 @@ public class Produto {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    public LocalDate getValidade() {
-        return validade;
+    public int getQuantidade() {
+        return quantidade;
     }
-    public void setValidade(LocalDate validade) {
-        this.validade = validade;
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
     public String getGeneroProduto() {
         return generoProduto;
