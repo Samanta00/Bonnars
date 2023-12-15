@@ -3,12 +3,13 @@ package com.bonnars_api.api_bonnars;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import java.util.Optional;
 import com.bonnars_api.api_bonnars.database.RepositorioProdutos;
 import java.util.List;
 import com.bonnars_api.api_bonnars.entidade.Produto;
@@ -22,6 +23,17 @@ public class ProdutoRest {
     @GetMapping
     public List<Produto> listar() {
         return repositorio.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Produto listarPorId(@PathVariable Long id) {
+        Optional<Produto> produtoOptional = repositorio.findById(id);
+        
+        if (produtoOptional.isPresent()) {
+            return produtoOptional.get();
+        } else {
+            return null;
+        }
     }
 
     @PostMapping
