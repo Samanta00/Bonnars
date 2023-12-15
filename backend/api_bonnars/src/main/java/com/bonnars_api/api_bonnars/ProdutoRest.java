@@ -28,6 +28,10 @@ public class ProdutoRest {
     public void salvar(@RequestBody Produto produto) {
         repositorio.save(produto); 
     }
-
+    @PutMapping
+    public void alterar(@RequestBody Produto produto){
+        if(produto.getId()>0)
+        repositorio.save(produto);
+    }
  
 }
