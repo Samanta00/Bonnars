@@ -33,5 +33,10 @@ public class ProdutoRest {
         if(produto.getId()>0)
         repositorio.save(produto);
     }
+
+    @DeleteMapping
+    public void excluir(@RequestBody Produto produto){
+        repositorio.delete(produto);
+    }
  
 }
