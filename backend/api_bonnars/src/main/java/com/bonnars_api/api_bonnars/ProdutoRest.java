@@ -55,7 +55,7 @@ public class ProdutoRest {
             produtoExistente.setNome(produtoAtualizado.getNome());
             produtoExistente.setPreco(produtoAtualizado.getPreco());
             produtoExistente.setDescricao(produtoAtualizado.getDescricao());
-            produtoExistente.setValidade(produtoAtualizado.getValidade());
+            produtoExistente.setQuantidade(produtoAtualizado.getQuantidade());
             produtoExistente.setGeneroProduto(produtoAtualizado.getGeneroProduto());
             produtoExistente.setMarca(produtoAtualizado.getMarca());
 
