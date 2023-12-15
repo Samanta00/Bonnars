@@ -2,10 +2,31 @@ package com.bonnars_api.api_bonnars.entidade;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 
-
+@Entity
 public class Produto {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column(nullable = false)
+    private String nome;
+    @Column(nullable = false)
+    private double preco;
+    @Column(nullable = false) 
+    private String descricao;
+    @Column(nullable = false)
+    private LocalDate validade; 
+    @Column(nullable = false)
+    private String generoProduto;
+    @Column(nullable = false)
+    private String marca;
+
 
     public Long getId() {
         return id;
@@ -49,13 +70,5 @@ public class Produto {
     public void setMarca(String marca) {
         this.marca = marca;
     }
-    private Long id;
-    private String nome;
-    private double preco;
-    private String descricao;
-    private LocalDate validade;
-    private String generoProduto;
-    private String marca;
-
 
 }
