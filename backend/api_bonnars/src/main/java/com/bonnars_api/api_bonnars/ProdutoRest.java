@@ -1,6 +1,7 @@
 package com.bonnars_api.api_bonnars;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -44,6 +45,24 @@ public class ProdutoRest {
     public void alterar(@RequestBody Produto produto){
         if(produto.getId()>0)
         repositorio.save(produto);
+    }
+    @PutMapping("/{id}") // Usando PUT para edição por ID
+    public void editarPorId(@PathVariable Long id, @RequestBody Produto produtoAtualizado) {
+        Optional<Produto> produtoOptional = repositorio.findById(id);
+
+        if (produtoOptional.isPresent()) {
+            Produto produtoExistente = produtoOptional.get();
+            produtoExistente.setNome(produtoAtualizado.getNome());
+            produtoExistente.setPreco(produtoAtualizado.getPreco());
+            produtoExistente.setDescricao(produtoAtualizado.getDescricao());
+            produtoExistente.setValidade(produtoAtualizado.getValidade());
+            produtoExistente.setGeneroProduto(produtoAtualizado.getGeneroProduto());
+            produtoExistente.setMarca(produtoAtualizado.getMarca());
+
+            repositorio.save(produtoExistente);
+        } else {
+            throw new ResourceNotFoundException("Produto não encontrado com o ID: " + id);
+        }
     }
 
     @DeleteMapping
