@@ -26,7 +26,7 @@ public class ProdutoRest {
 
     @PostMapping
     public void salvar(@RequestBody Produto produto) {
-        repositorio.save(produto); // Corrigido para chamar o método save no RepositorioInventario
+        repositorio.save(produto); 
     }
 
  
