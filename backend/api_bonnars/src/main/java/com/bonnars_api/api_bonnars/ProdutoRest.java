@@ -17,11 +17,14 @@ import com.bonnars_api.api_bonnars.entidade.Produto;
 @RequestMapping("/produtos")
 public class ProdutoRest {
     @Autowired
-    private RepositorioProdutos produto;
+    private RepositorioProdutos repositorio;
 
     @GetMapping
     public List<Produto> listar() {
-        return produto.findAll();
+        return repositorio.findAll();
     }
 
+
+
+ 
 }
