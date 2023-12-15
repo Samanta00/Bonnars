@@ -24,7 +24,10 @@ public class ProdutoRest {
         return repositorio.findAll();
     }
 
-
+    @PostMapping
+    public void salvar(@RequestBody Produto produto) {
+        repositorio.save(produto); // Corrigido para chamar o método save no RepositorioInventario
+    }
 
  
 }
