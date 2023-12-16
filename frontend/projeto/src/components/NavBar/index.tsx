@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/logo-bonnars.png";
+
 
 const NavBar: React.FC = () => {
   return (
@@ -7,11 +7,7 @@ const NavBar: React.FC = () => {
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
           <h1 className="m-0">
-            <img
-              className="d-block"
-              src={logo}
-              alt=""
-            />
+
           </h1>
         </a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
