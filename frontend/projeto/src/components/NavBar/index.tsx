@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
 
 
 const NavBar: React.FC = () => {
@@ -16,10 +18,10 @@ const NavBar: React.FC = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">Home</a>
+              <a className="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Lojas</a>
+              <a className="nav-link" href="/catalogo">Lojas</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">Novidades</a>
@@ -29,7 +31,9 @@ const NavBar: React.FC = () => {
             </li>
           </ul>
           <form className="d-flex" role="search">
-          <i className="bi bi-cart4 text-light fs-3 me-2"></i>
+          <Link to="/carrinho">
+            <i className="bi bi-cart4 text-light fs-3 me-2"></i>
+          </Link>
             <input className="form-control me-2 rounded-0" type="search" placeholder="Digite o produto" aria-label="Buscar" />
             <button className="btn btn-outline-light rounded-0" type="submit">Buscar</button>
           </form>
