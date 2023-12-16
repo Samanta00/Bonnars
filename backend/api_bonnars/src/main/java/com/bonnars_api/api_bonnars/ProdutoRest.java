@@ -53,11 +53,12 @@ public class ProdutoRest {
         if (produtoOptional.isPresent()) {
             Produto produtoExistente = produtoOptional.get();
             produtoExistente.setNome(produtoAtualizado.getNome());
+            produtoExistente.setCategoria(produtoAtualizado.getCategoria());
+            produtoExistente.setTamanho(produtoAtualizado.getTamanho());
+            produtoExistente.setCor(produtoAtualizado.getCor());
+            produtoExistente.setMaterial(produtoAtualizado.getMaterial());
             produtoExistente.setPreco(produtoAtualizado.getPreco());
-            produtoExistente.setDescricao(produtoAtualizado.getDescricao());
-            produtoExistente.setQuantidade(produtoAtualizado.getQuantidade());
-            produtoExistente.setGeneroProduto(produtoAtualizado.getGeneroProduto());
-            produtoExistente.setMarca(produtoAtualizado.getMarca());
+            produtoExistente.setImagem(produtoAtualizado.getImagem());
 
             repositorio.save(produtoExistente);
         } else {
