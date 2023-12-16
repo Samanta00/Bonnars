@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ApiBonnarsApplication<api_bonnars>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.bonnars_api.api_bonnars.ApiBonnarsApplication",
+            "projectName": "api_bonnars",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
