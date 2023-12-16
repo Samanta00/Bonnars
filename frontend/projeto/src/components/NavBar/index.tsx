@@ -29,6 +29,7 @@ const NavBar: React.FC = () => {
             </li>
           </ul>
           <form className="d-flex" role="search">
+          <i className="bi bi-cart4 text-light fs-3 me-2"></i>
             <input className="form-control me-2 rounded-0" type="search" placeholder="Digite o produto" aria-label="Buscar" />
             <button className="btn btn-outline-light rounded-0" type="submit">Buscar</button>
           </form>
