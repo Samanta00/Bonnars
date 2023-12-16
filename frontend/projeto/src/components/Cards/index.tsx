@@ -38,7 +38,7 @@ export default function Cards() {
             <img className="d-none d-xl-block" src={Cdesktop1} alt="" />
             <div className="card-header bg-black text-bg-dark">
               <p className="text-center">
-                Categoria
+                Camisas
               </p>
             </div>
           </div>
@@ -51,7 +51,7 @@ export default function Cards() {
             <img className="d-none d-xl-block" src={Cdesktop2} alt="" />
             <div className="card-header bg-black text-bg-dark">
               <p className="text-center">
-                Categoria
+                Casacos
               </p>
             </div>
           </div>
@@ -64,7 +64,7 @@ export default function Cards() {
             <img className="d-none d-xl-block" src={Cdesktop3} alt="" />
             <div className="card-header bg-black text-bg-dark">
               <p className="text-center">
-                Categoria
+                Bolsas
               </p>
             </div>
           </div>
@@ -77,7 +77,7 @@ export default function Cards() {
             <img className="d-none d-xl-block" src={Cdesktop4} alt="" />
             <div className="card-header bg-black text-bg-dark">
               <p className="text-center">
-                Categoria
+                Calçados
               </p>
             </div>
           </div>
@@ -90,7 +90,7 @@ export default function Cards() {
             <img className="d-none d-xl-block" src={Cdesktop5} alt="" />
             <div className="card-header bg-black text-bg-dark">
               <p className="text-center">
-                Categoria
+                Acessórios
               </p>
             </div>
           </div>
@@ -103,7 +103,7 @@ export default function Cards() {
             <img className="d-none d-xl-block" src={Cdesktop6} alt="" />
             <div className="card-header bg-black text-bg-dark">
               <p className="text-center">
-                Categoria
+                Calças
               </p>
             </div>
           </div>
