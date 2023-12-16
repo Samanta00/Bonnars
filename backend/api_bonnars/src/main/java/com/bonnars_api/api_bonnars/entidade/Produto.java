@@ -16,59 +16,88 @@ public class Produto {
     private long id;
     @Column(nullable = false)
     private String nome;
+
+    @Column(nullable = false) 
+    private String categoria;
+
+    @Column(nullable = false)
+    private String tamanho;
+
+    @Column(nullable = false)
+    private String cor;
+
+    @Column(nullable = false)
+    private String material;
+
     @Column(nullable = false)
     private double preco;
-    @Column(nullable = false) 
-    private String descricao;
-    @Column(nullable = false)
-    private int quantidade;
-    @Column(nullable = false)
-    private String generoProduto;
-    @Column(nullable = false)
-    private String marca;
 
+    @Column(nullable = false)
+    private String imagem;
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
-    public void setId(Long id) {
+
+    public void setId(long id) {
         this.id = id;
     }
+
     public String getNome() {
         return nome;
     }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getTamanho() {
+        return tamanho;
+    }
+
+    public void setTamanho(String tamanho) {
+        this.tamanho = tamanho;
+    }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+
     public double getPreco() {
         return preco;
     }
+
     public void setPreco(double preco) {
         this.preco = preco;
     }
-    public String getDescricao() {
-        return descricao;
+
+    public String getImagem() {
+        return imagem;
     }
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
     }
-    public int getQuantidade() {
-        return quantidade;
-    }
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
-    public String getGeneroProduto() {
-        return generoProduto;
-    }
-    public void setGeneroProduto(String generoProduto) {
-        this.generoProduto = generoProduto;
-    }
-    public String getMarca() {
-        return marca;
-    }
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
+
 
 }
