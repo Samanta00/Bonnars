@@ -1,0 +1,36 @@
+/* Estilos CSS para o painel de filtro */
+.filter-panel {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para cada seção de filtro */
+  .filter-section {
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos para rótulos */
+  label {
+    margin-right: 5px;
+  }
+  
+  /* Estilos para o input de range */
+  input[type='range'] {
+    width: 100%;
+  }
+  
+  /* Estilos para o range de preço */
+  span {
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+  }
+  
+  /* Estilos para o título do filtro */
+  h3 {
+    margin-bottom: 10px;
+  }
+  
