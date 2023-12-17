@@ -25,6 +25,22 @@
   .clothing-details {
     text-align: center;
   }
+
+  .clothing-details h5 {
+  font-size: 1rem; /* Tamanho do título ajustável */
+  margin-bottom: 8px; /* Espaçamento inferior */
+}
+
+/* Estilos para as informações do card */
+.clothing-details p {
+  font-size: 0.9rem; /* Tamanho do texto ajustável */
+  margin-bottom: 4px; /* Espaçamento inferior */
+}
+
+/* Estilos para o ícone 'Comprar' */
+.clothing-details i {
+  font-size: 0.9rem; /* Tamanho do ícone ajustável */
+}
   
   
   .catalog-items {
@@ -47,5 +63,19 @@
     .catalog-items > .clothing-card {
       flex: 1 0 calc(50% - 20px); /* Distribui em 2 colunas com margens */
       max-width: calc(50% - 20px); /* Máximo de 2 colunas */
+    }
+  }
+@media (max-width: 768px) {
+    .clothing-details h5 {
+      font-size: 0.8rem;
+    }
+  
+    .clothing-details p {
+      font-size: 0.65rem;
+      margin-bottom: 4px;
+    }
+  
+    .clothing-details i {
+      font-size: 0.7rem;
     }
   }
