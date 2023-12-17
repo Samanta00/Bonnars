@@ -10,6 +10,7 @@ interface CartItem {
 
 export default function Carrinho() {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     fetch('http://localhost:8080/carrinho')
@@ -25,6 +26,17 @@ export default function Carrinho() {
   const getTotalPrice = () => {
     return cartItems.reduce((total, item) => total + item.preco * item.quantidade, 0);
   };
+
+  const handleEdit = (id: number) => {
+    console.log(id)
+    setShowModal(true); 
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false); 
+  };
+
+
 
   const handleCancel = (id: number) => {
     fetch(`http://localhost:8080/carrinho/${id}`, {
@@ -55,9 +67,19 @@ export default function Carrinho() {
               <span>Quantity: {item.quantidade}</span>
               <span>Price: ${item.preco * item.quantidade}</span>
             </div>
-            <button className="cancel-button" onClick={() => handleCancel(item.id)}>
-              X
-            </button>
+            
+            <div className='alinhamentoBotoes'>
+                  <i
+                    className="bi bi-pencil-fill fs-3 me-2"
+                    onClick={() => handleEdit(item.id)}
+                    id='iconeEditar'
+                  ></i>
+                <button className="cancel-button" onClick={() => handleCancel(item.id)}>
+                  X
+                </button>
+                
+            </div>
+
           </div>
         ))}
       </div>
@@ -67,6 +89,18 @@ export default function Carrinho() {
           <button className="checkout-button">Finalizar Compra</button>
         </div>
       )}
+
+      {showModal && (
+        <div className="modal">
+          <div className="modal-content">
+            {/* Conteúdo do modal */}
+            <h3>Editar Produto</h3>
+            {/* Inclua os campos de edição e botões de salvar/cancelar */}
+            <button onClick={handleCloseModal}>Fechar</button>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }
