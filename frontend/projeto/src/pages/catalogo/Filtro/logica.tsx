@@ -1,14 +1,15 @@
 import React from 'react';
+import './Styles/painelFiltro.css'
 
 interface ClothingItem {
   id: number;
   nome: string;
-  categoria:string;
+  categoria: string;
   tamanho: string;
-  cor:string;
+  cor: string;
   material: string;
   preco: number;
-  imagem:string; 
+  imagem: string;
 }
 
 interface LogicaFiltroProps {
@@ -17,17 +18,11 @@ interface LogicaFiltroProps {
 }
 
 const LogicaFiltro: React.FC<LogicaFiltroProps> = ({ clothingItems, onFilterChange }) => {
-    const getUniqueValues = <K extends keyof ClothingItem>(key: K): ClothingItem[K][] => {
-        return Array.from(new Set(clothingItems.map((item) => item[key])));
-    };
-      
-
-  const handleFilterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const { name, value } = event.target;
-    onFilterChange({ [name]: value });
+  const getUniqueValues = <K extends keyof ClothingItem>(key: K): ClothingItem[K][] => {
+    return Array.from(new Set(clothingItems.map((item) => item[key])));
   };
 
-  const handlePrecoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFilterChange = (event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
     const { name, value } = event.target;
     onFilterChange({ [name]: value });
   };
@@ -84,7 +79,7 @@ const LogicaFiltro: React.FC<LogicaFiltroProps> = ({ clothingItems, onFilterChan
           max={precoRange.max}
           step={10}
           name="preco"
-          onChange={handlePrecoChange}
+          onChange={handleFilterChange}
         />
         <span>${precoRange.min} - ${precoRange.max}</span>
       </div>
