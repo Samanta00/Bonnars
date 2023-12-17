@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import LogicaFiltro from './logica'; 
 import ClothingCard, { ClothingItem } from './ClothingCard'; 
-import './filtro.css'
+import './Styles/filtro.css'
 
 interface FiltroProps {
   clothingItems: ClothingItem[];
@@ -13,7 +13,7 @@ interface FiltroProps {
 const Filtro: React.FC<FiltroProps> = ({ clothingItems, onFilteredItems }) => {
   const [filteredItems, setFilteredItems] = useState<ClothingItem[]>(clothingItems);
 
-  type FilterKeys = 'tamanho' | 'cor' | 'material' | 'preco'; // Defina as chaves que podem ser filtradas
+  type FilterKeys = 'tamanho' | 'cor' | 'material' | 'preco'; // Definição das chaves que podem ser filtradas
 
 
   const handleFilterChange = (filters: any) => {
@@ -37,13 +37,14 @@ const Filtro: React.FC<FiltroProps> = ({ clothingItems, onFilteredItems }) => {
   useEffect(() => {
     onFilteredItems(filteredItems);
   }, [filteredItems, onFilteredItems]);
-  
+  const uniqueFilteredItems = filteredItems.filter((item) => !clothingItems.includes(item));
+
   return (
     <div className="catalog">
       <LogicaFiltro clothingItems={clothingItems} onFilterChange={handleFilterChange} />
       <div className="catalog-content">
         <div>
-          {filteredItems.map((item) => (
+          {uniqueFilteredItems.map((item) => (
             <div key={item.id}>
               <ClothingCard item={item} />
             </div>
@@ -52,6 +53,7 @@ const Filtro: React.FC<FiltroProps> = ({ clothingItems, onFilteredItems }) => {
       </div>
     </div>
   );
+  
 };
 
 export default Filtro;
