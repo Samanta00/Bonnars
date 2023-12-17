@@ -3,13 +3,13 @@ import React from 'react';
 
 export interface ClothingItem {
   id: number;
-  name: string;
-  category: string;
-  size: string;
-  color: string;
+  nome: string;
+  categoria:string;
+  tamanho: string;
+  cor:string;
   material: string;
-  price: number;
-  image: string;
+  preco: number;
+  imagem:string; 
 }
 
 

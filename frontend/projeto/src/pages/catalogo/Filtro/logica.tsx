@@ -2,13 +2,13 @@ import React from 'react';
 
 interface ClothingItem {
   id: number;
-  name: string;
-  category: string;
-  size: string;
-  color: string;
+  nome: string;
+  categoria:string;
+  tamanho: string;
+  cor:string;
   material: string;
-  price: number;
-  image: string;
+  preco: number;
+  imagem:string; 
 }
 
 interface LogicaFiltroProps {
@@ -32,12 +32,12 @@ const LogicaFiltro: React.FC<LogicaFiltroProps> = ({ clothingItems, onFilterChan
     onFilterChange({ [name]: value });
   };
 
-  const sizes = getUniqueValues('size');
-  const colors = getUniqueValues('color');
+  const tamanho = getUniqueValues('tamanho');
+  const cor = getUniqueValues('cor');
   const materials = getUniqueValues('material');
   const priceRange = {
-    min: Math.min(...clothingItems.map((item) => item.price)),
-    max: Math.max(...clothingItems.map((item) => item.price)),
+    min: Math.min(...clothingItems.map((item) => item.preco)),
+    max: Math.max(...clothingItems.map((item) => item.preco)),
   };
 
   return (
@@ -47,9 +47,9 @@ const LogicaFiltro: React.FC<LogicaFiltroProps> = ({ clothingItems, onFilterChan
         <label>Tamanho:</label>
         <select name="size" onChange={handleFilterChange}>
           <option value="">All</option>
-          {sizes.map((size) => (
-            <option key={size} value={size}>
-              {size}
+          {tamanho.map((tamanho) => (
+            <option key={tamanho} value={tamanho}>
+              {tamanho}
             </option>
           ))}
         </select>
@@ -58,9 +58,9 @@ const LogicaFiltro: React.FC<LogicaFiltroProps> = ({ clothingItems, onFilterChan
         <label>Cor:</label>
         <select name="color" onChange={handleFilterChange}>
           <option value="">All</option>
-          {colors.map((color) => (
-            <option key={color} value={color}>
-              {color}
+          {cor.map((cor) => (
+            <option key={cor} value={cor}>
+              {cor}
             </option>
           ))}
         </select>
