@@ -26,6 +26,7 @@ const LogicaFiltro: React.FC<LogicaFiltroProps> = ({ clothingItems, onFilterChan
     const { name, value } = event.target;
     onFilterChange({ [name]: value });
   };
+  
 
   const tamanho = getUniqueValues('tamanho');
   const cor = getUniqueValues('cor');
@@ -40,7 +41,7 @@ const LogicaFiltro: React.FC<LogicaFiltroProps> = ({ clothingItems, onFilterChan
       <h3>Filters</h3>
       <div className="filter-section">
         <label>Tamanho:</label>
-        <select name="size" onChange={handleFilterChange}>
+        <select name="tamanho" onChange={handleFilterChange}>
           <option value="">All</option>
           {tamanho.map((tamanho) => (
             <option key={tamanho} value={tamanho}>
@@ -51,7 +52,7 @@ const LogicaFiltro: React.FC<LogicaFiltroProps> = ({ clothingItems, onFilterChan
       </div>
       <div className="filter-section">
         <label>Cor:</label>
-        <select name="color" onChange={handleFilterChange}>
+        <select name="cor" onChange={handleFilterChange}>
           <option value="">All</option>
           {cor.map((cor) => (
             <option key={cor} value={cor}>
