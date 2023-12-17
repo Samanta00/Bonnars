@@ -13,20 +13,23 @@ interface FiltroProps {
 const Filtro: React.FC<FiltroProps> = ({ clothingItems, onFilteredItems }) => {
   const [filteredItems, setFilteredItems] = useState<ClothingItem[]>(clothingItems);
 
-  type FilterKeys = 'size' | 'color' | 'material' | 'price'; // Defina as chaves que podem ser filtradas
+  type FilterKeys = 'tamanho' | 'cor' | 'material' | 'preco'; // Defina as chaves que podem ser filtradas
 
 
-  const handleFilterChange = (filters: Partial<Record<FilterKeys, string>>) => {
+  const handleFilterChange = (filters: any) => {
+    // Lógica para filtrar os itens com base nos filtros aplicados
     const filtered = clothingItems.filter((item) => {
-      return Object.entries(filters).every(([key, value]) => {
-        if (value && item[key as keyof ClothingItem] !== value) {
+      for (const key in filters) {
+        if (filters[key] !== '' && String(item[key as keyof ClothingItem ]) !== filters[key]) {
           return false;
         }
-        return true;
-      });
+      }
+      return true;
     });
     setFilteredItems(filtered);
   };
+
+  
   
   
 

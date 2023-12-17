@@ -27,7 +27,7 @@ const LogicaFiltro: React.FC<LogicaFiltroProps> = ({ clothingItems, onFilterChan
     onFilterChange({ [name]: value });
   };
 
-  const handlePriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handlePrecoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     onFilterChange({ [name]: value });
   };
@@ -35,7 +35,7 @@ const LogicaFiltro: React.FC<LogicaFiltroProps> = ({ clothingItems, onFilterChan
   const tamanho = getUniqueValues('tamanho');
   const cor = getUniqueValues('cor');
   const materials = getUniqueValues('material');
-  const priceRange = {
+  const precoRange = {
     min: Math.min(...clothingItems.map((item) => item.preco)),
     max: Math.max(...clothingItems.map((item) => item.preco)),
   };
@@ -80,13 +80,13 @@ const LogicaFiltro: React.FC<LogicaFiltroProps> = ({ clothingItems, onFilterChan
         <label>Faixa de Preço:</label>
         <input
           type="range"
-          min={priceRange.min}
-          max={priceRange.max}
+          min={precoRange.min}
+          max={precoRange.max}
           step={10}
-          name="price"
-          onChange={handlePriceChange}
+          name="preco"
+          onChange={handlePrecoChange}
         />
-        <span>${priceRange.min} - ${priceRange.max}</span>
+        <span>${precoRange.min} - ${precoRange.max}</span>
       </div>
     </div>
   );
