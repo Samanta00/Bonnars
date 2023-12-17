@@ -25,6 +25,8 @@ public class Carrinho {
     private double preco;
     @Column(nullable = false) 
     private String imagem;
+    @Column(nullable = false) 
+    private int quantidade;
     public long getId() {
         return id;
     }
@@ -67,8 +69,11 @@ public class Carrinho {
     public void setImagem(String imagem) {
         this.imagem = imagem;
     }
-
-
-
+    public int getQuantidade() {
+        return quantidade;
+    }
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
 
 }
