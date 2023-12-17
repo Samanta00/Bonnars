@@ -59,6 +59,7 @@ public class CarrinhoRest {
             carrinhoExistente.setCor(carrinhoAtualizado.getCor());
             carrinhoExistente.setPreco(carrinhoAtualizado.getPreco());
             carrinhoExistente.setImagem(carrinhoAtualizado.getImagem());
+            carrinhoExistente.setQuantidade(carrinhoAtualizado.getQuantidade());
 
             repositorio.save(carrinhoExistente);
         } else {
@@ -66,9 +67,9 @@ public class CarrinhoRest {
         }
     }
 
-    @DeleteMapping
-    public void excluir(@RequestBody Carrinho carrinho){
-        repositorio.delete(carrinho);
+    @DeleteMapping("/{id}")
+    public void excluirPorId(@PathVariable Long id) {
+        repositorio.deleteById(id);
     }
  
 }
