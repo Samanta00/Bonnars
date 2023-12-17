@@ -54,11 +54,7 @@ public class CarrinhoRest {
 
         if (carrinhoOptional.isPresent()) {
             Carrinho carrinhoExistente = carrinhoOptional.get();
-            carrinhoExistente.setNome(carrinhoAtualizado.getNome());
-            carrinhoExistente.setTamanho(carrinhoAtualizado.getTamanho());
-            carrinhoExistente.setCor(carrinhoAtualizado.getCor());
-            carrinhoExistente.setPreco(carrinhoAtualizado.getPreco());
-            carrinhoExistente.setImagem(carrinhoAtualizado.getImagem());
+
             carrinhoExistente.setQuantidade(carrinhoAtualizado.getQuantidade());
 
             repositorio.save(carrinhoExistente);
