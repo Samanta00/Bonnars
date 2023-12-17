@@ -33,21 +33,32 @@ const Catalogo = () => {
       });
   }, []); // O segundo parâmetro [] garante que o efeito só será executado uma vez, equivalente ao componentDidMount()
 
+  
   return (
     <div>
       <h1>Seu Catálogo</h1>
       <div style={{ display: 'flex' }}>
         <div style={{ flex: 1 }}>
+        
           <Filtro clothingItems={clothingItems} onFilteredItems={handleFilteredItems} />
         </div>
         <div style={{ flex: 2 }}>
           <div className="catalog-items">
-            {(filteredItems.length > 0 ? filteredItems : clothingItems).map((item) => (
-              <div key={item.id} className="clothing-card">
-                <p>{item.nome}</p>
-                <ClothingCard key={item.id} item={item} />
-              </div>
-            ))}
+            {filteredItems.length > 0 ? (
+              filteredItems.map((item) => (
+                <div key={item.id} className="clothing-card">
+                 
+                  <ClothingCard key={item.id} item={item} />
+                </div>
+              ))
+            ) : (
+              clothingItems.map((item) => (
+                <div key={item.id} className="clothing-card">
+                  
+                  <ClothingCard key={item.id} item={item} />
+                </div>
+              ))
+            )}
           </div>
         </div>
       </div>
