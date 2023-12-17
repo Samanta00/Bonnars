@@ -36,10 +36,9 @@ const Catalogo = () => {
   
   return (
     <div>
-      <h1>Seu Catálogo</h1>
+      <h1 style={{ marginLeft: '53vw' }}>Catálogo Feminino</h1>
       <div style={{ display: 'flex' }}>
         <div style={{ flex: 1 }}>
-        
           <Filtro clothingItems={clothingItems} onFilteredItems={handleFilteredItems} />
         </div>
         <div style={{ flex: 2 }}>
@@ -47,14 +46,12 @@ const Catalogo = () => {
             {filteredItems.length > 0 ? (
               filteredItems.map((item) => (
                 <div key={item.id} className="clothing-card">
-                 
                   <ClothingCard key={item.id} item={item} />
                 </div>
               ))
             ) : (
               clothingItems.map((item) => (
                 <div key={item.id} className="clothing-card">
-                  
                   <ClothingCard key={item.id} item={item} />
                 </div>
               ))
@@ -64,6 +61,7 @@ const Catalogo = () => {
       </div>
     </div>
   );
+  
 };
 
 export default Catalogo;
