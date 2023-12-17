@@ -15,25 +15,28 @@
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 10px;
-    margin: 0px;
+    margin: -3px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%; /* Largura total */
-    max-width: 200px; /* Largura máxima do card */
+    width: 200px;
+    height: 300px; /* Defina uma altura fixa para todos os itens */
+    overflow: hidden; /* Oculta o conteúdo que ultrapassa a altura definida */
   }
+  
 
   .clothing-card {
-    width: 100%; /* Cada cubo ocupa 100% da largura da coluna */
+    width: 100%; /* Cada cartão ocupa 100% da largura da coluna */
     background-color: white;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Centraliza o texto */
+    text-align: center;
+    height: 100%; /* Defina a altura da clothing-card para 100% */
   }
   
   .clothing-card img {
-    max-width: 100%;
+    max-width: 46%;
     height: auto;
     border-radius: 8px;
   }

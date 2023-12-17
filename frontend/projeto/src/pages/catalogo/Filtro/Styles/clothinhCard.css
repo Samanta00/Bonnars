@@ -1,14 +1,16 @@
 .clothing-item {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-    margin: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%; /* Largura total */
-    max-width: 200px; /* Largura máxima do card */
-  }
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  height: 300px; /* Defina uma altura fixa para todos os itens */
+  overflow: hidden; /* Oculta o conteúdo que ultrapassa a altura definida */
+}
+
 
 .cardStyle {
     width: 200px;
@@ -43,13 +45,15 @@
 }
   
   
-  .catalog-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-  }
+.catalog-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 4 colunas */
+  gap: 20px;
+  background-color: white;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
 
   /* Estilos para cada card dentro da lista de itens do catálogo */
 .catalog-items > .clothing-card {
@@ -57,6 +61,20 @@
     max-width: calc(25% - 20px); /* Máximo de 4 colunas */
     margin: 10px; /* Margem entre os cards */
   }
+
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+  }
+  
+  .bi-cart-dash-fill {
+    margin-right: auto;
+  }
+  
+  .bi-cart-plus-fill {
+    margin-left: auto;
+  }
+  
 
   /* Estilos para quando a tela for menor */
 @media screen and (max-width: 768px) {
