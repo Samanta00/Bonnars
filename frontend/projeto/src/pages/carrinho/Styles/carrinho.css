@@ -6,6 +6,11 @@
     border-radius: 5px;
     background-color: #f9f9f9;
   }
+  .alinhamentoBotoes {
+    display: flex;
+  }
+  
+  
   
   h2 {
     text-align: center;
@@ -70,8 +75,47 @@
     border-radius: 5px;
     cursor: pointer;
   }
+
+  #iconeEditar{
+    cursor:pointer;
+  }
   
   .checkout-button:hover {
     background-color: #45a049;
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+
+
+  @media (max-width: 768px) {
+    .cart-item {
+      flex-direction: column; /* Muda para empilhamento em telas menores */
+    }
+  
+    .item-details {
+      width: 100%; /* Ocupa a largura total */
+      margin-bottom: 10px; /* Adiciona um espaçamento entre os detalhes e o botão */
+    }
+  
+    .cancel-button {
+      width: 100%; /* Ocupa a largura total */
+    }
   }
   
