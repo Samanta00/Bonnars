@@ -15,25 +15,22 @@ const Filtro: React.FC<FiltroProps> = ({ clothingItems, onFilteredItems }) => {
 
   type FilterKeys = 'tamanho' | 'cor' | 'material' | 'preco'; // Definição das chaves que podem ser filtradas
 
-
-  const handleFilterChange = (filters: any) => {
-    // Lógica para filtrar os itens com base nos filtros aplicados
-    const filtered = clothingItems.filter((item) => {
+  const handleFilterChange = (filters: Partial<Record<FilterKeys, string>>) => {
+    const filtered: ClothingItem[] = clothingItems.filter((item) => {
       for (const key in filters) {
-        if (filters[key] !== '' && String(item[key as keyof ClothingItem ]) !== filters[key]) {
-          return false;
+        if (Object.prototype.hasOwnProperty.call(filters, key)) {
+          const filterValue = filters[key as keyof typeof filters];
+          if (filterValue && String(item[key as keyof ClothingItem]) !== filterValue) {
+            return false;
+          }
         }
       }
       return true;
     });
     setFilteredItems(filtered);
   };
-
   
   
-  
-
-
   useEffect(() => {
     onFilteredItems(filteredItems);
   }, [filteredItems, onFilteredItems]);
