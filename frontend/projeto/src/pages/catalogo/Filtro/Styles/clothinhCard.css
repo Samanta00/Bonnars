@@ -1,0 +1,51 @@
+.clothing-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Largura total */
+    max-width: 200px; /* Largura máxima do card */
+  }
+
+.cardStyle {
+    width: 200px;
+    height: 300px;
+}
+
+.clothing-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  
+  .clothing-details {
+    text-align: center;
+  }
+  
+  
+  .catalog-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  /* Estilos para cada card dentro da lista de itens do catálogo */
+.catalog-items > .clothing-card {
+    flex: 1 0 calc(25% - 20px); /* Distribui em 4 colunas com margens */
+    max-width: calc(25% - 20px); /* Máximo de 4 colunas */
+    margin: 10px; /* Margem entre os cards */
+  }
+
+  /* Estilos para quando a tela for menor */
+@media screen and (max-width: 768px) {
+    .catalog-items > .clothing-card {
+      flex: 1 0 calc(50% - 20px); /* Distribui em 2 colunas com margens */
+      max-width: calc(50% - 20px); /* Máximo de 2 colunas */
+    }
+  }
