@@ -68,9 +68,9 @@ public class ProdutoRest {
         }
     }
 
-    @DeleteMapping
-    public void excluir(@RequestBody Produto produto){
-        repositorio.delete(produto);
+    @DeleteMapping("/{id}")
+    public void excluirPorId(@PathVariable Long id) {
+        repositorio.deleteById(id);
     }
  
 }
