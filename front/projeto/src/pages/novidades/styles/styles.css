@@ -1,0 +1,33 @@
+/* nomeNovidade.css */
+
+.CardNovidade {
+  max-width: 18rem;
+  margin-bottom: 20px; /* Aumenta o espaçamento entre os cards */
+  margin-right: 20px; /* Cria espaçamento à direita dos cards */
+}
+
+.ProductBlock {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Define o espaçamento entre os blocos de produtos */
+}
+
+.ContainerNovidade {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ImageNovidade {
+  display: block;
+  margin: 0 auto; /* Centraliza horizontalmente */
+  width: 50%;
+}
+
+.BannerImage {
+  display: block;
+  margin: 0 auto; /* Centraliza horizontalmente */
+  max-width: 100%; /* Garante que a imagem se ajuste ao tamanho do container */
+}
