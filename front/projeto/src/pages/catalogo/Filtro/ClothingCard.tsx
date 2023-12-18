@@ -31,34 +31,40 @@ const ClothingCard: React.FC<ClothingCardProps> = ({ item }) => {
   };
 
   const addToCart = () => {
-    const cartItem = {
-      id_Produto: item.id,
-      nome: item.nome,
-      tamanho: item.tamanho,
-      cor: item.cor,
-      preco: item.preco,
-      quantidade: quantity,
-      imagem: item.imagem,
-    };
-
-    fetch('http://localhost:8080/carrinho', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(cartItem),
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Item adicionado ao carrinho:', data);
-        setSuccessMessage('Produto adicionado ao carrinho!');
-        setQuantity(0); // Esvaziar a quantidade após adicionar ao carrinho
+    if (quantity > 0) {
+      const cartItem = {
+        id_Produto: item.id,
+        nome: item.nome,
+        tamanho: item.tamanho,
+        cor: item.cor,
+        preco: item.preco,
+        quantidade: quantity,
+        imagem: item.imagem,
+      };
+  
+      fetch('http://localhost:8080/carrinho', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(cartItem),
       })
-      .catch(error => {
-        console.error('Erro ao adicionar item ao carrinho:', error);
-        // Adicione tratamento de erro, como exibir uma mensagem de erro para o usuário
-      });
+        .then(response => response.json())
+        .then(data => {
+          console.log('Item adicionado ao carrinho:', data);
+          setSuccessMessage('Produto adicionado ao carrinho!');
+          setQuantity(0); 
+        })
+        .catch(error => {
+          console.error('Erro ao adicionar item ao carrinho:', error);
+       
+        });
+    } else {
+      console.log('A quantidade precisa ser maior que zero para adicionar ao carrinho');
+      alert("A quantidade precisa ser maior que zero para adicionar ao carrinho")
+    }
   };
+  
 
   return (
     <div className="clothing-item">
