@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import './Styles/carrinho.css';
 import Modal from './modal';
+import { Link } from 'react-router-dom';
 
 interface CartItem {
   id: number;
@@ -101,7 +102,10 @@ export default function Carrinho() {
       {cartItems.length > 0 && (
         <div className="cart-footer">
           <div className="total">Total: ${getTotalPrice()}</div>
-          <button className="checkout-button">Finalizar Compra</button>
+          <Link to="/pagamento">
+            <button className="checkout-button">Finalizar Compra</button>
+          </Link>
+          
         </div>
       )}
 
