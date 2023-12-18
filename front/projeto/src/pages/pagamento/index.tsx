@@ -1,30 +1,77 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
 import './Styles/styles.css'
 
 interface PaymentFormData {
-  name: string;
+  nome: string;
   email: string;
-  address: string;
-  card: string;
-  expiry: string;
+  endereco: string;
+  numeroCartao: string;
+  data: string;
   cvv: string;
 }
 
 const Payment: React.FC = () => {
+  const [pagantes, setPagantes] = useState<any[]>([]);
   const [formData, setFormData] = useState<PaymentFormData>({
-    name: '',
+    nome: '',
     email: '',
-    address: '',
-    card: '',
-    expiry: '',
+    endereco: '',
+    numeroCartao: '',
+    data: '',
     cvv: '',
   });
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  useEffect(() => {
+    fetch('http://localhost:8080/pagantes')
+      .then((response) => response.json())
+      .then((data) => {
+        setPagantes(data);
+      })
+      .catch((error) => {
+        console.error('Erro ao buscar os dados dos pagantes:', error);
+      });
+  }, []); 
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Aqui você pode enviar os dados para processamento
-    console.log('Dados de pagamento enviados:', formData);
-    // Lógica para enviar os dados para o servidor ou outro destino
+    const requestData = {
+      nome: formData.nome,
+      email: formData.email,
+      endereco: formData.endereco,
+      numeroCartao: formData.numeroCartao,
+      data: formData.data,
+      cvv: formData.cvv,
+    };
+
+     
+    
+    try {
+      const response = await fetch('http://localhost:8080/pagantes', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestData),
+      });
+  
+      if (response.ok) {
+        console.log('Pagamento realizado com sucesso!');
+        setFormData({
+          nome: '',
+          email: '',
+          endereco: '',
+          numeroCartao: '',
+          data: '',
+          cvv: '',
+        });
+        alert("Pagamento realizado com sucesso!")
+      } else {
+        console.error('Erro ao processar pagamento.');
+      }
+    } catch (error) {
+      console.error('Erro ao enviar dados de pagamento:', error);
+    }
   };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,7 +85,7 @@ const Payment: React.FC = () => {
       <form className="payment-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Nome Completo</label>
-          <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} required />
+          <input type="text" id="name" name="nome" value={formData.nome} onChange={handleInputChange} required />
         </div>
         <div className="form-group">
           <label htmlFor="email">E-mail</label>
@@ -49,23 +96,23 @@ const Payment: React.FC = () => {
           <input
             type="text"
             id="address"
-            name="address"
-            value={formData.address}
+            name="endereco"
+            value={formData.endereco}
             onChange={handleInputChange}
             required
           />
         </div>
         <div className="form-group">
           <label htmlFor="card">Número do Cartão de Crédito</label>
-          <input type="text" id="card" name="card" value={formData.card} onChange={handleInputChange} required />
+          <input type="text" id="card" name="numeroCartao" value={formData.numeroCartao} onChange={handleInputChange} required />
         </div>
         <div className="form-group">
           <label htmlFor="expiry">Data de Expiração</label>
           <input
             type="text"
             id="expiry"
-            name="expiry"
-            value={formData.expiry}
+            name="data"
+            value={formData.data}
             onChange={handleInputChange}
             placeholder="MM/AA"
             required
@@ -79,6 +126,21 @@ const Payment: React.FC = () => {
           <input type="submit" value="Pagar" />
         </div>
       </form>
+
+      <div className="pagantes-list">
+        <h2>Lista de Solicitações de Compra</h2>
+        <ul>
+          {pagantes.map((pagante, index) => (
+            <li key={index}>
+              <p>Nome: {pagante.nome}</p>
+              <p>Email: {pagante.email}</p>
+              <p>Endereço: {pagante.endereco}</p>
+              <p>Número do Cartão: {pagante.numeroCartao}</p>
+            </li>
+          ))}
+          
+        </ul>
+      </div>
     </div>
   );
 };
