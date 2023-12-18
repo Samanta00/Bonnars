@@ -21,6 +21,10 @@
 - **Swagger**
 - **Boas Práticas do Git Bash para entender como o projeto foi desenvolvido(analise os commits)**
 
-  
+## Para baixar o Projeto clone o repositório
+## no terminal abra a pasta do frontend e dê um npm install
+## no terminal abre a pasta do frontend e dê um npm install
+
+
 
 
