@@ -9,7 +9,7 @@ interface Shoe {
   image: string;
 }
 
-const App: React.FC = () => {
+const Slide: React.FC = () => {
   const [data, setData] = useState<Shoe[]>([]);
   const carousel = useRef<HTMLDivElement>(null);
 
@@ -69,4 +69,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default Slide;
