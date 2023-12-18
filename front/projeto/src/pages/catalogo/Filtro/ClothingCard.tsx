@@ -73,7 +73,7 @@ const ClothingCard: React.FC<ClothingCardProps> = ({ item }) => {
           <span>{quantity}</span>
           <i className="bi bi-cart-plus-fill" onClick={increaseQuantity}></i>
         </div>
-        <button onClick={addToCart}>Comprar</button>
+        <button className="botao-comprar" onClick={addToCart}>Comprar</button>
         {successMessage && <p>{successMessage}</p>}
       </div>
     </div>
