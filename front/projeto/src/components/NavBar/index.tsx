@@ -24,17 +24,15 @@ const NavBar: React.FC = () => {
               <a className="nav-link" href="/catalogo">Lojas</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Novidades</a>
+              <a className="nav-link" href="/bombando">Novidades</a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Promoção</a>
-            </li>
+
           </ul>
           <form className="d-flex" role="search">
           <Link to="/carrinho">
             <i className="bi bi-cart4 text-light fs-3 me-2"></i>
           </Link>
-            <input className="form-control me-2 rounded-0" type="search" placeholder="Digite o produto" aria-label="Buscar" />
+            <input className="form-control me-2 rounded-0" type="search" placeholder="Procurar produto" aria-label="Buscar" />
             <button className="btn btn-outline-light rounded-0" type="submit">Buscar</button>
           </form>
         </div>
