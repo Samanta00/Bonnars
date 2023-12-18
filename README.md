@@ -19,3 +19,8 @@
 
 ### Documentação
 - **Swagger**
+- **Boas Práticas do Git Bash para entender como o projeto foi desenvolvido(analise os commits)**
+
+  
+
+
