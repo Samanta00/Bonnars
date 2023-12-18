@@ -3,6 +3,9 @@ import Home from '../../pages/home';
 import PaginaPadrao from '../../components/PaginaPadrao';
 import Carrinho from '../../pages/carrinho';
 import Catalogo from '../../pages/catalogo';
+import Pagamento from '../../pages/pagamento';
+import ProductListVendidos from '../../pages/novidades';
+
 
 export default function AppRouter() {
   return (
@@ -13,6 +16,8 @@ export default function AppRouter() {
             <Route index element={<Home/>}/> 
             <Route path='carrinho' index element={<Carrinho/>}/>
             <Route path='catalogo' index element={<Catalogo/>}/>
+            <Route path='pagamento' index element={<Pagamento/>}/>
+            <Route path='bombando' index element={<ProductListVendidos/>}/>
         </Route>
     
       </Routes>
