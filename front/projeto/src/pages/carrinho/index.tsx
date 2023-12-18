@@ -82,9 +82,11 @@ export default function Carrinho() {
         {cartItems.map((item) => (
           <div key={item.id} className="cart-item">
             <div className="item-details">
+              <img src={item.imagem} alt={item.nome} className="product-image" />
               <span>{item.nome}</span>
               <span>Quantity: {item.quantidade}</span>
               <span>Price: ${item.preco * item.quantidade}</span>
+              
             </div>
             <div className='alinhamentoBotoes'>
               <i
