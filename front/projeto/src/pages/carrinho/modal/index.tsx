@@ -22,6 +22,12 @@ const Modal: React.FC<ModalProps> = ({ item, handleCloseModal }) => {
   };
 
   const handleUpdateQuantity = () => {
+    if (editedQuantity < 1) {
+      // Mostrar uma mensagem de erro ou adotar alguma ação apropriada aqui
+     alert('A quantidade deve ser igual ou maior que 1.');
+      return;
+    }
+  
     const updatedItem = {
       ...item,
       quantidade: editedQuantity,
@@ -46,6 +52,7 @@ const Modal: React.FC<ModalProps> = ({ item, handleCloseModal }) => {
         console.error('Erro ao fazer a requisição PUT:', error);
       });
   };
+  
   
   return (
     <div className="modal">
