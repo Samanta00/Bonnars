@@ -26,8 +26,31 @@
 
 ## Rotas de Acessos da API:
 
-###Para acessesar a rota de carrinho
-- **http://localhost:8080/**
+### Para acessesar a rota de carrinho
+- **Localmente inicie com http://localhost:8080/**
+- **Após isso coloque um dos caminhos**
+- **/carrinho  [GET]**
+- **/carrinho  [POST]**
+- **/carrinho  [PUT]**
+- **/carrinho/{id}  [DELETE]**
+- **/carrinho/{id}  [GET]**
+- **/carrinho/{id}  [PUT]**
+
+
+### Para acessesar a rota de pagantes
+- **Localmente inicie com http://localhost:8080/**
+- **Após isso coloque um dos caminhos**
+- **/pagantes  [GET]**
+- **/pagantes  [POST]**
+- **/pagantes  [PUT]**
+- **/pagantes  [DELETE]**
+- **/pagantes/{id}  [GET]**
+- **/pagantes  [PUT]**
+
+
+### Para acessesar a rota de produtos
+- **Localmente inicie com http://localhost:8080/**
+- **Após isso coloque um dos caminhos**
 - **/carrinho  [GET]**
 - **/carrinho  [POST]**
 - **/carrinho  [PUT]**
