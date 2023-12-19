@@ -58,6 +58,9 @@
 - **/carrinho/{id}  [GET]**
 - **/carrinho/{id}  [PUT]**
 
+
+## Comos as Rotas estão funcionando ao FRONTEND da Aplicação?
+
 ### Para listar os produtos exibidos na interface é utilizado o GET
 ### Para adicionar produtos ao carrinho é utilizado o POST
 ### Para editar a quantidade de produtos ao carrinho é utilizado o PUT
