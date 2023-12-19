@@ -70,6 +70,9 @@
 ### Para visualizar a lista pendente de pagamento é utilizado o GET
 ### Para Buscar os produtos no campo de busca é utilizado o GET
 
+![Screenshot_72](https://github.com/Samanta00/Bonnars/assets/80990432/eadd9d64-f164-4f4e-849d-e6b4e9ee6e8e)
+
+
 
 
 
