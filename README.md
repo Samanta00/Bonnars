@@ -58,6 +58,17 @@
 - **/carrinho/{id}  [GET]**
 - **/carrinho/{id}  [PUT]**
 
+### Para listar os produtos exibidos na interface é utilizado o GET
+### Para adicionar produtos ao carrinho é utilizado o POST
+### Para editar a quantidade de produtos ao carrinho é utilizado o PUT
+### Para abrir o modal do produto é utilizado o GET por ID
+### Para deletar o produto do carrinho é utilizado o DELETE
+### Para adicionar seu dados as compras dos produtos é utilizado o POST
+### Para visualizar a lista pendente de pagamento é utilizado o GET
+### Para Buscar os produtos no campo de busca é utilizado o GET
+
+
+
 
 
 
