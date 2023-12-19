@@ -2,6 +2,10 @@
 
 **Descrição:** O projeto "Bonnars" é uma simulação de uma loja de roupas online, desenvolvida como um ambiente de aprendizado e prática. Com o intuito de oferecer uma experiência fictícia de compra e venda de vestuário, o projeto foi concebido para demonstrar a integração entre diferentes tecnologias no desenvolvimento de aplicações web.
 
+
+## Link para abrir o projeto online pelo vercel: https://bonnars.vercel.app/
+
+
 ## Como foi desenvolvido?
 
 ### Frontend
