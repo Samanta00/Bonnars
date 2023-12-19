@@ -16,8 +16,10 @@ import com.bonnars_api.api_bonnars.database.RepositorioPagantes;
 import java.util.List;
 import com.bonnars_api.api_bonnars.entidade.Pagantes;
 
+//criação da função e rota
+
 @RestController
-@CrossOrigin(origins="*")
+@CrossOrigin(origins="*") //declaração do cors da api//
 @RequestMapping("/pagantes")
 public class PagantesRest {
     @Autowired

@@ -8,6 +8,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+// entidade de criação de tabela no banco de dados
+
 @Entity
 public class Pagantes {
     @Id

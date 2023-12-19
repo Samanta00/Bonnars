@@ -16,8 +16,10 @@ import com.bonnars_api.api_bonnars.database.RepositorioProdutos;
 import java.util.List;
 import com.bonnars_api.api_bonnars.entidade.Produto;
 
+//criação da função e rota
+
 @RestController
-@CrossOrigin(origins="*")
+@CrossOrigin(origins="*") //declaração do cors da api//
 @RequestMapping("/produtos")
 public class ProdutoRest {
     @Autowired

@@ -16,8 +16,11 @@ import com.bonnars_api.api_bonnars.database.RepositorioCarrinho;
 import java.util.List;
 import com.bonnars_api.api_bonnars.entidade.Carrinho;
 
+
+//criação da função e rota
+
 @RestController
-@CrossOrigin(origins="*")
+@CrossOrigin(origins="*") //declaração do cors da api//
 @RequestMapping("/carrinho")
 public class CarrinhoRest {
     @Autowired
